@@ -9,14 +9,20 @@
         <span class="ml-2 text-dark-brown font-abhayaLibre font-bold">{{ item.label }}</span>
       </div>
     </div>
-    <HamburgerMenu :menu-items="menuItems" />
-    <!-- <SideBar :menu-items="menuItems"></SideBar> -->
+    <div class="col-span-1 col-start-8 col-end-8">
+      <div class="pt-6 col-end-8">
+        <button type="button" class="sm:hidden text-dark-brown font-extrabold" @click="toggleNav">
+          <span :class="showSidebar ? 'pi pi-times' : 'pi pi-bars'"></span>
+        </button>
+      </div>
+    </div>
+    <SideBar :menu-items="menuItems" :show-sidebar="showSidebar" class="col-start-5"></SideBar>
   </nav>
 </template>
 
 <script setup lang="ts">
-import HamburgerMenu from '../components/navbar/HamburgerMenu.vue';
-// import SideBar from '../components/navbar/SideBar.vue';
+import { ref } from 'vue';
+import SideBar from '../components/navbar/SideBar.vue';
 const menuItems = [
   { label: 'Home', id: '#home', icon: 'pi pi-home' },
   { label: 'Sobre Mim', id: '#quem-sou', icon: 'pi pi-heart' },
@@ -25,4 +31,6 @@ const menuItems = [
   { label: 'Agendamento', id: '#agendamento', icon: 'pi pi-whatsapp' },
   { label: 'Contato', id: '#contato', icon: 'pi pi-envelope' },
 ];
+const showSidebar = ref(false);
+const toggleNav = () => (showSidebar.value = !showSidebar.value);
 </script>
