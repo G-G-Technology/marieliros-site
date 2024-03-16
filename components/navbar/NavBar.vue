@@ -10,11 +10,13 @@
       </div>
     </div>
     <HamburgerMenu :menu-items="menuItems" />
+    <!-- <SideBar :menu-items="menuItems"></SideBar> -->
   </nav>
 </template>
 
 <script setup lang="ts">
 import HamburgerMenu from '../components/navbar/HamburgerMenu.vue';
+// import SideBar from '../components/navbar/SideBar.vue';
 const menuItems = [
   { label: 'Home', id: '#home', icon: 'pi pi-home' },
   { label: 'Sobre Mim', id: '#quem-sou', icon: 'pi pi-heart' },

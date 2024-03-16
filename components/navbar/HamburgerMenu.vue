@@ -1,5 +1,5 @@
 <template>
-  <div class="md:hidden col-start-6 col-span-2 pt-4">
+  <div class="md:hidden col-start-6 col-end-8 col-span-3 pt-4">
     <div class="flex justify-end pr-2">
       <button type="button" class="text-dark-brown font-extrabold" @click="toggleNav">
         <span class="pi pi-align-justify"></span>
