@@ -12,6 +12,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@nuxt/image": "^1.4.0",
     "nuxt": "^3.10.3",
     "primeicons": "^6.0.1",
     "typescript": "^5.4.2",
