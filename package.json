@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "nuxt": "^3.10.3",
+    "primeicons": "^6.0.1",
     "typescript": "^5.4.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
