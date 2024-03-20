@@ -26,15 +26,15 @@
         </div>
       </div>
     </div>
-    <div class="col-start-2 col-span-4 md:col-span-3 pt-4 md:pt-0 md:col-start-6">
-      <ScheduleButton :button-lable="'Quero Agendar Uma Sessão'" />
+    <div class="col-start-2 col-span-3 md:col-start-2 md:col-span-3 pt-4 md:pt-0">
+      <ButtonComponent :button-lable="'Quero Agendar Uma Sessão'" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import AppointmentType from '../components/appointment/AppointmentType.vue';
-import ScheduleButton from '../components/buttons/ScheduleButton.vue';
+import ButtonComponent from '../components/common/ButtonComponent.vue';
 </script>
 
 <style></style>

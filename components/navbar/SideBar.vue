@@ -22,6 +22,6 @@ interface MenuItem {
 
 defineProps<{
   menuItems: MenuItem[];
-  showSidebar: string;
+  showSidebar: boolean;
 }>();
 </script>

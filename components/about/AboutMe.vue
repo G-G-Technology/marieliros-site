@@ -1,13 +1,13 @@
 <template>
   <div class="grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4">
     <div class="col-start-2 col-span-4 max-sm:hidden">
-      <NuxtImg src="/img/About.png" size="w-414 h-621 sm:w-214 sm:h-421" densities="x1 x2" />
+      <PictureComponent :picture-path="'/img/About.png'" />
     </div>
     <div class="col-start-2 col-span-6 md:col-start-6 md:col-span-6 flex flex-col items-start">
       <div class="text-dark-brown font-cinzel text-xl md:text-3xl font-bold pb-2">Muito Prazer,</div>
       <div class="text-gold font-alexBrush text-xl md:text-3xl font-bold pb-4">Eu sou a Marieli</div>
       <div class="col-start-2 col-span-4 md:hidden">
-        <NuxtImg src="/img/About.png" size="w-414 h-621 sm:w-214 sm:h-421" densities="x1 x2" />
+        <PictureComponent :picture-path="'/img/About.png'" />
       </div>
       <div class="text-dark-brown font-abhayaLibre text-lg md:text-xl text-justify pt-3 pb-2">
         Sou Psicóloga e Gestalt-terapeuta, com meu trabalho busco auxiliar os pacientes a enfrentarem seus desafios e
@@ -28,6 +28,8 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import PictureComponent from '../components/common/PictureComponent.vue';
+</script>
 
 <style></style>
