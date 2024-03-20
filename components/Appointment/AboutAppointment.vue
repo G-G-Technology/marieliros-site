@@ -10,31 +10,31 @@
         Podendo ser realizado em duas modalidades:
       </div>
 
-      <div class="flex flex-col md:flex-row justify-items-start">
-        <div class="col-start-2 col-span-6 md:col-start-2 md:col-span-10 pr-2 pb-4">
-          <ImageAppointment :picture-path="'/img/AboutPresencial.png'" />
-          <LabelAppointment
+      <div class="flex flex-col md:flex-row">
+        <div class="col-start-2 col-span-6 md:col-start-2 md:col-span-5 pr-2 pb-4">
+          <AppointmentType
+            :picture-path="'/img/AboutPresencial.png'"
             :description="'Presencial: o consulente se desloca até o consultório no dia e horário agendado.'"
           />
         </div>
 
-        <div class="col-start-2 col-span-6 md:col-start-7 md:col-span-10 pl-2">
-          <ImageAppointment :picture-path="'/img/AboutOnline.png'" />
-          <LabelAppointment :description="'Online: no dia e horario agendado a sessao e realizada via google meet.'" />
+        <div class="col-start-2 col-span-6 md:col-start-7 md:col-span-5 pl-2">
+          <AppointmentType
+            :picture-path="'/img/AboutOnline.png'"
+            :description="'Online: no dia e horario agendado a sessao e realizada via google meet.'"
+          />
         </div>
       </div>
+    </div>
+    <div class="col-start-2 col-span-4 md:col-span-3 pt-4 md:pt-0 md:col-start-6">
+      <ScheduleButton :button-lable="'Quero Agendar Uma Sessão'" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import ImageAppointment from '../components/Appointment/ImageAppointment.vue';
-import LabelAppointment from '../components/Appointment/LabelAppointment.vue';
-// const imageInPerson = '/img/AboutPresencial.png';
-// const lableInPerson = ' Presencial: o consulente se desloca até o consultório no dia e horário agendado.';
-
-// const imageOnline = '/img/AboutPresencial.png';
-// const lableOnline = ' Presencial: o consulente se desloca até o consultório no dia e horário agendado.';
+import AppointmentType from '../components/appointment/AppointmentType.vue';
+import ScheduleButton from '../components/buttons/ScheduleButton.vue';
 </script>
 
 <style></style>

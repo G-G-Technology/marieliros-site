@@ -9,5 +9,5 @@
 <script setup lang="ts">
 import NavBar from '../components/navbar/NavBar.vue';
 import AboutMe from '../components/about/AboutMe.vue';
-import AboutAppointment from '../components/Appointment/AboutAppointment.vue';
+import AboutAppointment from '../components/appointment/AboutAppointment.vue';
 </script>
