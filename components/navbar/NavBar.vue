@@ -9,27 +9,19 @@
         <span class="ml-2 text-dark-brown font-abhayaLibre font-bold">{{ item.label }}</span>
       </div>
     </div>
-    <div class="col-span-1 col-start-8 col-end-8">
-      <div class="pt-6 col-end-8">
-        <button type="button" class="sm:hidden text-dark-brown font-extrabold" @click="toggleNav">
-          <span :class="showSidebar ? 'pi pi-times' : 'pi pi-bars'"></span>
-        </button>
-      </div>
+    <div class="col-span-1 col-start-8 col-end-8 pt-6">
+      <SideBar :menu-items="menuItems"></SideBar>
     </div>
-    <SideBar :menu-items="menuItems" :show-sidebar="showSidebar" class="col-start-5"></SideBar>
   </nav>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import SideBar from '../components/navbar/SideBar.vue';
 const menuItems = [
-  { label: 'Sobre', id: '#quem-sou', icon: 'pi pi-heart' },
-  { label: 'Psicoterapia', id: '#psicoterapia', icon: 'pi pi-star' },
-  { label: 'Atendimento', id: '#atendimento', icon: 'pi pi-book' },
-  { label: 'Agendamento', id: '#agendamento', icon: 'pi pi-whatsapp' },
-  { label: 'Contato', id: '#contato', icon: 'pi pi-envelope' },
+  { label: 'Sobre', sectionId: '#AboutMe', icon: 'pi pi-heart' },
+  { label: 'Psicoterapia', sectionId: '#psicoterapia', icon: 'pi pi-star' },
+  { label: 'Atendimento', sectionId: '#AboutAppointment', icon: 'pi pi-book' },
+  { label: 'Agendamento', sectionId: '#agendamento', icon: 'pi pi-whatsapp' },
+  { label: 'Contato', sectionId: '#contato', icon: 'pi pi-envelope' },
 ];
-const showSidebar = ref(false);
-const toggleNav = () => (showSidebar.value = !showSidebar.value);
 </script>

@@ -1,8 +1,12 @@
 <template>
-  <div class="bg-cream">
-    <NavBar />
-    <AboutMe class="py-10" />
-    <AboutAppointment class="py-10" />
+  <div class="bg-cream m-auto">
+    <div class="max-w-[1200px] mx-auto">
+      <NavBar />
+      <main>
+        <AboutMe id="AboutMe" class="py-10" />
+        <AboutAppointment id="AboutAppointment" class="py-10" />
+      </main>
+    </div>
   </div>
 </template>
 
