@@ -5,8 +5,10 @@
       <div class="text-center text-gold font-abhayaLibre text-sm sm:text-1xl">Psicóloga Clínica</div>
     </div>
     <div class="max-sm:hidden col-start-6 col-end-12 flex flex-row flex-nowrap items-center justify-center py-3 pl-3">
-      <div v-for="(item, index) in menuItems" :key="index" class="p-3 hover:bg-beige" :class="item.icon">
-        <span class="ml-2 text-dark-brown font-abhayaLibre font-bold">{{ item.label }}</span>
+      <div v-for="(item, index) in menuItems" :key="index" class="p-3 hover:bg-beige">
+        <NuxtLink :to="item.sectionId" :class="item.icon">
+          <span class="ml-1 text-dark-brown font-abhayaLibre font-bold">{{ item.label }}</span>
+        </NuxtLink>
       </div>
     </div>
     <div class="col-span-1 col-start-8 col-end-8 pt-6">
@@ -19,9 +21,9 @@
 import SideBar from '../components/navbar/SideBar.vue';
 const menuItems = [
   { label: 'Sobre', sectionId: '#AboutMe', icon: 'pi pi-heart' },
-  { label: 'Psicoterapia', sectionId: '#psicoterapia', icon: 'pi pi-star' },
+  { label: 'Psicoterapia', sectionId: '#GestaltTherapy', icon: 'pi pi-star' },
   { label: 'Atendimento', sectionId: '#AboutAppointment', icon: 'pi pi-book' },
   { label: 'Agendamento', sectionId: '#agendamento', icon: 'pi pi-whatsapp' },
-  { label: 'Contato', sectionId: '#contato', icon: 'pi pi-envelope' },
+  { label: 'Contato', sectionId: '#ContactSection', icon: 'pi pi-envelope' },
 ];
 </script>
