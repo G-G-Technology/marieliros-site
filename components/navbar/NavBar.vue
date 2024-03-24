@@ -1,8 +1,8 @@
 <template>
-  <nav class="grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4">
-    <div class="py-4 pr-4 col-start-2 col-span-3">
-      <div class="text-center text-dark-brown font-alexBrush text-3xl sm:text-4xl">Marieli Ros</div>
-      <div class="text-center text-gold font-abhayaLibre text-sm sm:text-1xl">Psicóloga Clínica</div>
+  <nav class="grid grid-cols-8 gap-1 md:grid-cols-12 md:gap-4">
+    <div class="py-4 pr-4 col-start-2 col-span-4 md:col-start-2 md:col-span-3">
+      <div class="text-center text-dark-brown font-alexBrush text-3xl md:text-4xl">Marieli Ros</div>
+      <div class="text-center text-gold font-abhayaLibre text-sm md:text-lg">Psicóloga Clínica</div>
     </div>
     <div class="max-sm:hidden col-start-6 col-end-12 flex flex-row flex-nowrap items-center justify-center py-3 pl-3">
       <div v-for="(item, index) in menuItems" :key="index" class="p-3 hover:bg-beige">
