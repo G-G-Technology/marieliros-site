@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    buildAssetsDir: '/marieliros/_nuxt/',
+    buildAssetsDir: '/marieliros-site/_nuxt/',
   },
   devtools: { enabled: true },
   typescript: {
