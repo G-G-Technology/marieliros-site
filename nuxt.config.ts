@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   app: {
     buildAssetsDir: '/_nuxt/',
+    baseUrl: '/mariliros-site/',
   },
   devtools: { enabled: true },
   typescript: {
