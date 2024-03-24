@@ -3,9 +3,10 @@
     <div class="grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4">
       <div class="col-start-2 col-span-6 md:col-start-2 md:col-span-10">
         <div class="text-dark-brown font-cinzel text-xl md:text-3xl font-bold pb-2 capitalize">
-          alguns exemplos de como posso te ajudar
+          Como posso te ajudar?
         </div>
-        <h3 class="text-brickred font-abhayaLibre text-xl md:text-1xl font-bold pb-2 capitalize">Ansiedade</h3>
+        <PictureComponent :picture-path="'/img/HowCanIHelp.png'" />
+        <h3 class="text-brickred font-abhayaLibre text-xl md:text-1xl font-bold pt-6 pb-2 capitalize">Ansiedade</h3>
         <div class="text-dark-brown font-abhayaLibre text-lg md:text-xl text-justify pb-2">
           A Gestalt-terapia ajuda as pessoas a se concentrarem no presente. Isso permite que os indivíduos descubram
           quais pensamentos, sentimentos ou comportamentos imediatos podem deixá-los ansiosos.
@@ -52,6 +53,7 @@
 </template>
 
 <script lang="ts" setup>
+import PictureComponent from '../components/common/PictureComponent.vue';
 import ButtonComponent from '../components/common/ButtonComponent.vue';
 </script>
 

@@ -2,14 +2,14 @@
   <div class="bg-cream m-auto">
     <div class="max-w-[1200px] mx-auto">
       <header>
-        <NavBar />
+        <NavBar class="pt-4 md:pt-8" />
       </header>
       <main>
-        <AboutMe id="AboutMe" class="mt-16 md:mt-24" />
-        <AboutAppointment id="AboutAppointment" class="mt-16 md:mt-24" />
-        <GestaltTherapy id="GestaltTherapy" class="mt-16 md:mt-24" />
-        <OfferedServices id="OfferedServices" class="mt-16 md:mt-24" />
-        <ContactSection id="ContactSection" class="mt-16 md:mt-24" />
+        <AboutMe id="AboutMe" class="pt-16 md:pt-24" />
+        <AboutAppointment id="AboutAppointment" class="pt-16 md:pt-24" />
+        <GestaltTherapy id="GestaltTherapy" class="pt-16 md:pt-24" />
+        <OfferedServices id="OfferedServices" class="pt-16 md:pt-24" />
+        <ContactSection id="ContactSection" class="pt-16 md:pt-24" />
       </main>
     </div>
   </div>
