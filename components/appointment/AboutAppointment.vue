@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4">
+    <div class="grid grid-cols-8 gap-1 md:grid-cols-12 md:gap-4">
       <div class="col-start-2 col-span-6 md:col-start-2 md:col-span-10 flex flex-col items-start">
         <h1 class="text-dark-brown font-cinzel text-xl md:text-3xl font-bold pb-2">Como Funcinam Os Atendimentos?</h1>
         <div class="text-dark-brown font-abhayaLibre text-lg md:text-xl text-justify pt-3">

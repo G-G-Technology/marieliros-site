@@ -6,7 +6,8 @@
     </div>
     <div class="max-sm:hidden col-start-6 col-end-12 flex flex-row flex-nowrap items-center justify-center py-3 pl-3">
       <div v-for="(item, index) in menuItems" :key="index" class="p-3 hover:bg-beige">
-        <NuxtLink :to="item.sectionId" :class="item.icon">
+        <NuxtLink :to="item.sectionId" class="flex flex-row items-center">
+          <span :class="item.icon" class="pl-1 text-dark-brown"></span>
           <span class="ml-1 text-dark-brown font-abhayaLibre font-bold">{{ item.label }}</span>
         </NuxtLink>
       </div>

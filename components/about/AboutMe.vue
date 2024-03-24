@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4">
+    <div class="grid grid-cols-8 gap-1 md:grid-cols-12 md:gap-4">
       <div class="col-start-2 col-span-4 max-sm:hidden">
         <PictureComponent :picture-path="'./img/About.png'" />
       </div>
