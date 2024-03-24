@@ -9,6 +9,6 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true,
   },
-  css: ['./assets/css/tailwind.css', '@/assets/css/main.css', 'primeicons/primeicons.css'],
+  css: ['~/assets/css/tailwind.css', '@/assets/css/main.css', 'primeicons/primeicons.css'],
   modules: ['@nuxtjs/tailwindcss', '@nuxt/image'],
 });
