@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="col-start-2 col-span-3 md:col-start-6 md:col-span-2 pt-4 md:pt-0">
-        <ButtonComponent :button-lable="'Quero Agendar Agora'" />
+        <ButtonComponent :button-lable="'Agendar Agora'" />
       </div>
     </div>
   </section>

@@ -29,6 +29,6 @@ const menuItems = [
       'https://api.whatsapp.com/send?phone=554891507605&text=Ol%C3%A1%20Marieli%2C%20%0AVenho%20atrav%C3%A9s%20to%20seu%20website%20e%20gostaria%20de%20agendar%20uma%20consulta.%0A',
     icon: 'pi pi-whatsapp',
   },
-  { label: 'Contato', sectionId: '#ContactSection', icon: 'pi pi-envelope' },
+  { label: 'Contatos', sectionId: '#ContactSection', icon: 'pi pi-envelope' },
 ];
 </script>

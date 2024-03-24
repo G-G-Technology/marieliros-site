@@ -45,16 +45,12 @@
           positiva em seu estilo de vida.
         </div>
       </div>
-      <div class="col-start-4 col-span-4 md:col-start-6 md:col-span-2 pt-0">
-        <ButtonComponent :button-lable="'Agendar Sessão'" />
-      </div>
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
 import PictureComponent from '../components/common/PictureComponent.vue';
-import ButtonComponent from '../components/common/ButtonComponent.vue';
 </script>
 
 <style></style>
