@@ -2,13 +2,13 @@
   <section>
     <div class="grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4">
       <div class="col-start-2 col-span-4 max-sm:hidden">
-        <PictureComponent :picture-path="'/img/About.png'" />
+        <PictureComponent :picture-path="'./img/About.png'" />
       </div>
       <div class="col-start-2 col-span-6 md:col-start-6 md:col-span-6 flex flex-col items-start">
         <h1 class="text-dark-brown font-cinzel text-xl md:text-2xl">Muito Prazer,</h1>
         <h2 class="text-gold font-cinzel text-xl md:text-2xl font-bold pb-4">Eu sou a Marieli</h2>
         <div class="col-start-2 col-span-4 md:hidden">
-          <PictureComponent :picture-path="'/img/About.png'" />
+          <PictureComponent :picture-path="'./img/About.png'" />
         </div>
         <div class="text-dark-brown font-abhayaLibre text-lg md:text-xl text-justify pt-3 pb-2">
           Sou Psicóloga e Gestalt-terapeuta, com meu trabalho busco auxiliar os pacientes a enfrentarem seus desafios e

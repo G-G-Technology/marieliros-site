@@ -14,14 +14,14 @@
         <div class="flex flex-col md:flex-row">
           <div class="col-start-2 col-span-6 md:col-start-2 md:col-span-5 pr-2 pb-4">
             <AppointmentType
-              :picture-path="'/img/AboutPresencial.png'"
+              :picture-path="'./img/AboutPresencial.png'"
               :description="'Presencial: o consulente se desloca até o consultório no dia e horário agendado.'"
             />
           </div>
 
           <div class="col-start-2 col-span-6 md:col-start-7 md:col-span-5 pl-2">
             <AppointmentType
-              :picture-path="'/img/AboutOnline.png'"
+              :picture-path="'./img/AboutOnline.png'"
               :description="'Online: no dia e horario agendado a sessao e realizada via google meet.'"
             />
           </div>

@@ -5,7 +5,7 @@
         <div class="text-dark-brown font-cinzel text-xl md:text-3xl font-bold pb-2 capitalize">
           Como posso te ajudar?
         </div>
-        <PictureComponent :picture-path="'/img/HowCanIHelp.png'" />
+        <PictureComponent :picture-path="'./img/HowCanIHelp.png'" />
         <h3 class="text-brickred font-abhayaLibre text-xl md:text-1xl font-bold pt-6 pb-2 capitalize">Ansiedade</h3>
         <div class="text-dark-brown font-abhayaLibre text-lg md:text-xl text-justify pb-2">
           A Gestalt-terapia ajuda as pessoas a se concentrarem no presente. Isso permite que os indivíduos descubram

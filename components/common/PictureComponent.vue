@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtImg :src="picturePath" densities="x1 x2" />
+    <img class="h-auto max-w-full" :src="picturePath" />
   </div>
 </template>
 
