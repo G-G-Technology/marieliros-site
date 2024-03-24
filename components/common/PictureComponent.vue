@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtImg :src="picturePath" size="100vw sm:50vw md:400px" densities="x1 x2" />
+    <NuxtImg :src="picturePath" densities="x1 x2" />
   </div>
 </template>
 
