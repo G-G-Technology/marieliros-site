@@ -5,7 +5,9 @@
     class="bg-gold rounded-xl flex flex-row items-center py-2"
   >
     <span :class="'pi pi-whatsapp'" class="text-cream pl-3"></span>
-    <span class="ml-2 text-cream capitalize font-abhayaLibre text-sm font-bold pr-3"> {{ buttonLable }}</span>
+    <span class="ml-2 text-cream capitalize font-abhayaLibre text-xs md:text-sm font-bold pr-3">
+      {{ buttonLable }}</span
+    >
   </NuxtLink>
 </template>
 
