@@ -1,34 +1,41 @@
 <template>
   <section>
-    <div class="relative grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4">
-      <!-- <div class="bg-[url('/img/ContactPage.png')] col-span-8 md:col-span-12"></div> -->
-      <PictureComponent
-        :picture-path="'img/ContactPage.png'"
-        class="relative col-start-2 col-span-6 md:col-start-2 md:col-span-10"
-      />
-      <div
-        class="absolute col-start-2 col-span-6 md:col-start-2 md:col-span-10 w-full h-full bg-white bg-opacity-80 flex flex-col items-center"
-      >
+    <div
+      class="grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4 bg-[url('./img/ContactPage.png')] w-full h-full bg-cover bg-center bg-no-repeat"
+    >
+      <div class="col-span-8 md:col-span-12 bg-white bg-opacity-80 flex flex-col items-center">
         <h1 class="text-dark-brown font-cinzel font-bold text-xs md:text-lg pt-6 md:pt-16 text-center">
           Dúvidas, Perguntas, Agendar uma Sessão
         </h1>
         <h2 class="text-dark-brown font-cinzel font-bold text-xs md:text-lg pt-4 md:pt-16 text-center">
-          Escolha a sua forma preferida de contato. <br />
-          Retornaremos a você em menos de 24 horas.
+          <p>Escolha a sua forma preferida de contato.</p>
+          <p>Retornaremos a você em menos de 24 horas.</p>
         </h2>
 
         <div class="flex flex-row pt-3 md:pt-8 pb-6">
           <div class="bg-gold rounded-full h-8 w-8 text-center mx-2">
-            <span :class="'pi pi-envelope h-8 w-8'" class="text-cream px-2 py-2"></span>
+            <NuxtLink
+              to="mailto:psi.marieliros@gmail.com?subject=Agendamento%20de%20consulta&body=Ol%C3%A1%20Marieli%2C%20%0AVenho%20atrav%C3%A9s%20to%20seu%20website%20e%20gostaria%20de%20agendar%20uma%20consulta.%0A"
+              target="_blank"
+            >
+              <span :class="'pi pi-envelope h-8 w-8'" class="text-cream px-2 py-2"></span>
+            </NuxtLink>
           </div>
           <div class="bg-gold rounded-full h-8 w-8 text-center mx-2">
-            <span :class="'pi pi-whatsapp h-8 w-8'" class="text-cream px-2 py-2"></span>
+            <NuxtLink
+              to="https://wa.me/554891507605?text=Ol%C3%A1%20Marieli%2C%20%0AVenho%20atrav%C3%A9s%20to%20seu%20website%20e%20gostaria%20de%20agendar%20uma%20consulta.%0A"
+              target="_blank"
+            >
+              <span :class="'pi pi-whatsapp h-8 w-8'" class="text-cream px-2 py-2"></span>
+            </NuxtLink>
           </div>
           <div class="bg-gold rounded-full h-8 w-8 text-center mx-2">
-            <span :class="'pi pi-instagram height-24px'" class="text-cream px-2 py-2"></span>
+            <NuxtLink to="https://www.instagram.com/psi.marieliros/" target="_blank">
+              <span :class="'pi pi-instagram height-24px'" class="text-cream px-2 py-2"></span>
+            </NuxtLink>
           </div>
         </div>
-        <div class="max-sm:hidden bg-cream rounded-full h-8 w-8 text-center mx-2 ml-auto mr-16 mt-36">
+        <div class="max-sm:hidden bg-cream rounded-full h-8 w-8 text-center mx-2 ml-auto mr-24 mb-16">
           <NuxtLink to="/">
             <span :class="'pi pi-home text-gold h-8 w-8'" class="px-2 py-2"></span>
           </NuxtLink>
@@ -38,8 +45,6 @@
   </section>
 </template>
 
-<script lang="ts" setup>
-import PictureComponent from '../components/common/PictureComponent.vue';
-</script>
+<script lang="ts" setup></script>
 
 <style></style>
