@@ -1,7 +1,7 @@
 <template>
-  <div class="grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4">
-    <section>
-      <div class="col-start-2 col-span-6 md:col-start-2 md:col-span-10 flex flex-col items-start">
+  <section>
+    <div class="grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4">
+      <div class="col-start-2 col-span-6 md:col-start-2 md:col-span-10">
         <div class="text-dark-brown font-cinzel text-xl md:text-3xl font-bold pb-2 capitalize">
           alguns exemplos de como posso te ajudar
         </div>
@@ -44,11 +44,11 @@
           positiva em seu estilo de vida.
         </div>
       </div>
-      <div class="col-start-4 col-span-4 md:col-start-6 md:col-span-3 pt-0">
-        <ButtonComponent :button-lable="'Quero Agendar Uma Sessão'" />
+      <div class="col-start-4 col-span-4 md:col-start-6 md:col-span-2 pt-0">
+        <ButtonComponent :button-lable="'Agendar Sessão'" />
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
