@@ -2,7 +2,7 @@
   <section>
     <div class="grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4">
       <div class="col-start-2 col-span-6 md:col-start-2 md:col-span-10">
-        <div class="text-dark-brown font-cinzel text-xl md:text-3xl font-bold pb-2 capitalize">
+        <div class="text-dark-brown font-cinzel text-xl md:text-3xl font-bold pb-3 capitalize">
           Como posso te ajudar?
         </div>
         <PictureComponent :picture-path="'./img/HowCanIHelp.png'" />
