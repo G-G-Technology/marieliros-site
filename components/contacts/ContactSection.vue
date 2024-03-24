@@ -1,7 +1,7 @@
 <template>
   <section>
     <div
-      class="grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4 bg-[url('./img/ContactPage.png')] w-full h-full bg-cover bg-center bg-no-repeat"
+      class="grid grid-cols-8 gap-1 sm:grid-cols-12 sm:gap-4 bg-[url('/img/ContactPage.png')] w-full h-full bg-cover bg-center bg-no-repeat"
     >
       <div class="col-span-8 md:col-span-12 bg-white bg-opacity-80 flex flex-col items-center">
         <h1 class="text-dark-brown font-cinzel font-bold text-xs md:text-lg pt-6 md:pt-16 text-center">
