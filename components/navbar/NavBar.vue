@@ -8,7 +8,7 @@
       <div v-for="(item, index) in menuItems" :key="index" class="p-3 hover:bg-beige">
         <NuxtLink :to="item.sectionId" class="flex flex-row items-center">
           <span :class="item.icon" class="pl-1 text-dark-brown"></span>
-          <span class="ml-1 text-dark-brown font-abhayaLibre font-bold">{{ item.label }}</span>
+          <span class="ml-1 text-dark-brown font-abhayaLibre font-extrabold">{{ item.label }}</span>
         </NuxtLink>
       </div>
     </div>

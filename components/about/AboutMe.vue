@@ -4,7 +4,7 @@
       <PictureComponent :picture-path="'./img/About.png'" />
     </div>
     <div class="col-start-2 col-span-6 md:col-start-6 md:col-span-6 flex flex-col items-start">
-      <h1 class="text-dark-brown font-cinzel text-xl md:text-2xl">Muito Prazer,</h1>
+      <h1 class="text-dark-brown font-cinzel text-xl md:text-2xl font-bold">Muito Prazer,</h1>
       <h2 class="text-gold font-cinzel text-xl md:text-2xl font-bold pb-4">Eu sou a Marieli</h2>
       <div class="col-start-2 col-span-4 md:hidden">
         <PictureComponent :picture-path="'./img/About.png'" />
