@@ -1,6 +1,7 @@
 <template>
   <div>
-    <img class="h-auto max-w-full" :src="picturePath" />
+    <!-- <img class="h-auto max-w-full" :src="picturePath" /> -->
+    <NuxtImg :src="picturePath" size="w-778 h-372 sm:w-214 sm:h-421" densities="x1 x2" />
   </div>
 </template>
 
