@@ -1,17 +1,21 @@
 <template>
   <div class="bg-cream m-auto">
-    <div class="max-w-[1200px] mx-auto">
-      <header>
-        <NavBar class="pt-4 md:pt-8" />
-      </header>
-      <main>
-        <AboutMe id="AboutMe" class="pt-16 md:pt-24" />
-        <AboutAppointment id="AboutAppointment" class="pt-16 md:pt-24" />
-        <GestaltTherapy id="GestaltTherapy" class="pt-16 md:pt-24" />
-        <OfferedServices id="OfferedServices" class="pt-16 md:pt-24" />
-        <ContactSection id="ContactSection" class="pt-16 md:pt-24" />
-      </main>
-    </div>
+    <header>
+      <NavBar class="max-w-[1200px]" />
+    </header>
+    <main>
+      <AboutMe id="AboutMe" class="pt-16 md:pt-24" />
+      <AboutAppointment id="AboutAppointment" class="pt-16 md:pt-24" />
+      <GestaltTherapy id="GestaltTherapy" class="pt-16 md:pt-24" />
+      <OfferedServices id="OfferedServices" class="pt-16 md:pt-24" />
+      <div class="bg-[url('~/img/ContactPage.png')] bg-cover bg-center bg-no-repeat">
+        <div class="bg-white bg-opacity-80 flex flex-col items-center">
+          <div class="max-w-[1200px] mx-auto">
+            <ContactSection id="ContactSection" class="" />
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <nav class="grid grid-cols-8 gap-1 md:grid-cols-12 md:gap-4">
+  <nav class="grid grid-cols-8 gap-1 md:grid-cols-12 md:gap-4 pt-4 md:pt-8">
     <div class="py-4 pr-4 col-start-2 col-span-4 md:col-start-2 md:col-span-3">
       <div class="text-center text-dark-brown font-alexBrush text-3xl md:text-4xl">Marieli Ros</div>
       <div class="text-center text-gold font-abhayaLibre text-sm md:text-lg">Psicóloga Clínica</div>
