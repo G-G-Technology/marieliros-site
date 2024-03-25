@@ -8,7 +8,7 @@
           Dúvidas, Perguntas, Agendar uma Sessão
         </h1>
         <h2 class="text-dark-brown font-cinzel font-bold text-xs md:text-lg pt-4 md:pt-16 text-center">
-          <p>Escolha a sua forma preferida de contato.</p>
+          <p>Entre em contato.</p>
           <p>Retornaremos a você em menos de 24 horas.</p>
         </h2>
 
