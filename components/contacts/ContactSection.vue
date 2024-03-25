@@ -1,10 +1,10 @@
 <template>
-  <section class="grid grid-cols-8 gap-1 md:grid-cols-12 md:gap-4 w-full h-full">
-    <div class="col-span-8 md:col-span-12 flex flex-col items-center">
-      <h1 class="text-dark-brown font-cinzel font-bold text-xs md:text-lg pt-12 md:pt-32 text-center">
+  <section class="grid grid-cols-8 gap-1 md:grid-cols-12 md:gap-4 w-full h-full pt-16 md:pt-24 pb-24">
+    <div class="col-span-8 md:col-span-12 flex flex-col items-center justify-center justify-self-center">
+      <h1 class="text-dark-brown font-cinzel font-bold text-xs md:text-lg text-center">
         Dúvidas, Perguntas, Agendar uma Sessão
       </h1>
-      <h2 class="text-dark-brown font-cinzel font-bold text-xs md:text-lg pt-4 md:pt-16 text-center">
+      <h2 class="text-dark-brown font-cinzel font-bold text-xs md:text-lg text-center">
         <p>Entre em contato.</p>
         <p>Retornaremos a você em menos de 24 horas.</p>
       </h2>
@@ -35,7 +35,7 @@
         </NuxtLink>
       </div>
 
-      <NuxtLink to="/" class="max-sm:hidden bg-cream rounded-full h-8 w-8 text-center mx-2 ml-auto mr-24 mb-16">
+      <NuxtLink to="/" class="max-sm:hidden bg-cream rounded-full h-8 w-8 text-center ml-auto mr-0 mt-12">
         <span :class="'pi pi-home text-gold h-8 w-8'" class="px-2 py-2"></span>
       </NuxtLink>
     </div>
