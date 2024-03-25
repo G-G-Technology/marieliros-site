@@ -8,7 +8,7 @@
       <AboutAppointment id="AboutAppointment" class="max-w-[1200px] mx-auto" />
       <GestaltTherapy id="GestaltTherapy" class="max-w-[1200px] mx-auto" />
       <OfferedServices id="OfferedServices" class="max-w-[1200px] mx-auto" />
-      <div class="bg-[url('~/img/ContactPage.png')] bg-cover bg-center bg-no-repeat">
+      <div class="bg-[url('/img/ContactPage.png')] bg-cover bg-center bg-no-repeat">
         <div class="bg-white bg-opacity-80 flex flex-col items-center">
           <div class="max-w-[1200px] mx-auto">
             <ContactSection id="ContactSection" class="" />
