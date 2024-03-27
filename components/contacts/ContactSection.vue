@@ -35,7 +35,7 @@
         </NuxtLink>
       </div>
 
-      <NuxtLink to="/" class="max-sm:hidden bg-cream rounded-full h-8 w-8 text-center ml-auto mr-0 mt-12">
+      <NuxtLink to="#BannerCarousel" class="max-sm:hidden bg-cream rounded-full h-8 w-8 text-center ml-auto mr-0 mt-12">
         <span :class="'pi pi-home text-gold h-8 w-8'" class="px-2 py-2"></span>
       </NuxtLink>
     </div>
