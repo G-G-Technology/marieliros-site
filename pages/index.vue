@@ -4,6 +4,8 @@
       <NavBar class="max-w-[1200px] mx-auto" />
     </header>
     <main>
+      <BannerCarousel id="BannerCarousel" class="max-sm:hidden max-w-[1200px] mx-auto" />
+      <BannerCarouselMobile id="BannerCarouselMobile" class="md:hidden" />
       <AboutMe id="AboutMe" class="max-w-[1200px] mx-auto" />
       <AboutAppointment id="AboutAppointment" class="max-w-[1200px] mx-auto" />
       <GestaltTherapy id="GestaltTherapy" class="max-w-[1200px] mx-auto" />
@@ -26,4 +28,6 @@ import AboutAppointment from '../components/appointment/AboutAppointment.vue';
 import GestaltTherapy from '../components/therapy/GestaltTherapy.vue';
 import OfferedServices from '../components/services/OfferedServices.vue';
 import ContactSection from '../components/contacts/ContactSection.vue';
+import BannerCarousel from '../components/banner-carousel/BannerCarousel.vue';
+import BannerCarouselMobile from '../components/banner-carousel/BannerCarouselMobile.vue';
 </script>
