@@ -12,5 +12,5 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   css: ['~/assets/css/tailwind.css', '@/assets/css/main.css', '~/node_modules/primeicons/primeicons.css'],
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image', 'nuxt-viewport'],
 });

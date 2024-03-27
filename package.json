@@ -27,6 +27,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "nuxt-primevue": "^0.3.1",
+    "nuxt-viewport": "^2.1.4",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12"
   }

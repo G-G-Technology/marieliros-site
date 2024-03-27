@@ -1,13 +1,13 @@
 <template>
   <section class="grid grid-cols-8 gap-1 md:grid-cols-12 md:gap-4">
-    <div class="relative slide col-start-2 col-span-6 md:col-start-2 md:col-span-10">
-      <div class="carousel-indicators absolute bottom-0 flex bg-cream h-24 w-full justify-center items-center">
+    <div class="relative slide col-start-1 col-span-8 md:col-start-1 md:col-span-12">
+      <div class="carousel-indicators absolute bottom-0 flex bg-cream h-12 w-full justify-center items-center">
         <ol class="z-50 flex w-4/12 justify-center">
           <li
             v-for="(item, index) in carouselItems"
             :key="index"
             :class="`${active === index ? 'bg-gold' : 'bg-beige'}`"
-            class="md:w-4 md:h-4 rounded-full cursor-pointer mx-2 ease-in-out"
+            class="w-2 h-2 rounded-full cursor-pointer mx-1 ease-in-out"
             @click="setActive(index)"
           ></li>
         </ol>
