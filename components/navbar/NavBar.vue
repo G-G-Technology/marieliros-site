@@ -23,7 +23,7 @@ import SideBar from '../components/navbar/SideBar.vue';
 const menuItems = [
   { label: 'Sobre', sectionId: '#AboutMe', icon: 'pi pi-heart' },
   { label: 'Psicoterapia', sectionId: '#GestaltTherapy', icon: 'pi pi-star' },
-  { label: 'Atendimento', sectionId: '#AboutAppointment', icon: 'pi pi-book' },
+  { label: 'Atendimentos', sectionId: '#AboutAppointment', icon: 'pi pi-book' },
   {
     label: 'Agendamento',
     sectionId:

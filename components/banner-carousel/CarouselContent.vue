@@ -5,7 +5,7 @@
     <div
       v-for="(item, index) in contentItems"
       :key="index"
-      class="absolute bottom-4 left-8 md:bottom-16 md:left-16 text-dark-brown font-cinzel font-bold text-lg md:text-5xl flex flex-col justify-items-start"
+      class="absolute bottom-8 left-10 md:bottom-16 md:left-16 text-dark-brown font-cinzel font-bold text-lg md:text-5xl flex flex-col justify-items-start"
     >
       <span> {{ item.part1 }}</span>
       <span> {{ item.part2 }}</span>

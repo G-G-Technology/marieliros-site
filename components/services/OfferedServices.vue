@@ -13,8 +13,8 @@
         Problemas de autoestima
       </h3>
       <div class="text-dark-brown font-abhayaLibre text-lg md:text-xl text-justify pb-2">
-        A Gestalt-terapia ajuda as pessoas a se concentrarem no presente. Isso permite que os indivíduos descubram quais
-        pensamentos, sentimentos ou comportamentos imediatos podem deixá-los ansiosos.
+        A Gestalt-terapia ajuda as pessoas com baixa autoestima a identificar e superar os fatores subjacentes que
+        contribuem para sua baixa autoestima.
       </div>
 
       <h3 class="text-brickred font-abhayaLibre text-xl md:text-1xl font-bold pb-2 capitalize">Depressão</h3>
