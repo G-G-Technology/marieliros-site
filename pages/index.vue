@@ -34,8 +34,4 @@ import BannerCarousel from '../components/banner-carousel/BannerCarousel.vue';
 import BannerCarouselMobile from '../components/banner-carousel/BannerCarouselMobile.vue';
 
 const { $viewport } = useNuxtApp();
-
-watch($viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
-  console.log('Breakpoint updated:', oldBreakpoint, '->', newBreakpoint);
-});
 </script>
