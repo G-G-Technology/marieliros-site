@@ -4,7 +4,7 @@ const isProd = process.env.NODE_ENV === 'production';
 export default defineNuxtConfig({
   app: {
     buildAssetsDir: isProd ? '/_nuxt/' : '/',
-    baseURL: isProd ? '/marieliros-site/' : '/',
+    // baseURL: isProd ? '/marieliros-site/' : '/',
   },
   devtools: { enabled: true },
   typescript: {
