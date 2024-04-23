@@ -27,7 +27,7 @@
       </div>
     </div>
     <div
-      class="col-start-5 col-span-3 md:col-start-6 md:col-span-2 pt-2 pb-6 md:pb-12 flex flex-row items-center justify-self-center"
+      class="col-start-5 col-span-3 md:col-start-6 md:col-span-2 pt-2 md:pt-0 pb-6 md:pb-12 flex flex-row items-center justify-self-center"
     >
       <ButtonComponent :button-lable="'Agendar Agora'" />
     </div>
