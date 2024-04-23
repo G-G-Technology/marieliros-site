@@ -56,7 +56,7 @@ onMounted(() => {
     }
     active.value = index;
     index++;
-  }, 5000);
+  }, 3000);
 });
 
 function setActive(index: number) {
