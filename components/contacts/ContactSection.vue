@@ -6,7 +6,7 @@
       </h1>
       <h2 class="text-dark-brown font-cinzel font-bold text-xs md:text-lg text-center">
         <p>Entre em contato.</p>
-        <p>Retornaremos a você em menos de 24 horas.</p>
+        <p>Retornaremos a você o mais rápido possível.</p>
       </h2>
 
       <div class="flex flex-row pt-3 md:pt-8 pb-12 md:pb-20">
