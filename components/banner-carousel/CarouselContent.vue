@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <PictureComponent :picture-path="picturePath" class="block w-full" alt="slide" />
+    <PictureComponent :picture-path="picturePath" class="block w-full h-auto" alt="slide" />
 
     <div
       v-for="(item, index) in contentItems"
