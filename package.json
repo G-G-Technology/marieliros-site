@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.4.0",
+    "@nuxtjs/sitemap": "^6.0.1",
     "nuxt": "^3.10.3",
     "primeicons": "^6.0.1",
     "typescript": "^5.4.2",

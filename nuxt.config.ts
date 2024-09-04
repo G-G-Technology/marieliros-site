@@ -1,7 +1,7 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
+export default {
   app: {
     buildAssetsDir: isProd ? '/_nuxt/' : '/',
     // baseURL: isProd ? '/marieliros-site/' : '/',
@@ -12,5 +12,11 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   css: ['~/assets/css/tailwind.css', '@/assets/css/main.css', '~/node_modules/primeicons/primeicons.css'],
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image', 'nuxt-viewport'],
-});
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image', 'nuxt-viewport', '@nuxtjs/sitemap'],
+  sitemap: {
+    hostname: 'https://marieliros.com.br',
+    gzip: true,
+    exclude: ['/admin/**'],
+    routes: ['/sobre', '/psicoterapia', '/atendimentos', '/contatos'],
+  },
+};
