@@ -6,13 +6,22 @@
         <p class="font-abhayaLibre text-gold text-xs">Painel Administrativo</p>
         <p v-if="user?.email" class="font-abhayaLibre text-beige text-xs mt-0.5">{{ user.email }}</p>
       </div>
-      <button
-        class="font-abhayaLibre text-sm text-dark-brown hover:text-gold transition-colors flex items-center gap-2"
-        @click="logout"
-      >
-        <span class="pi pi-sign-out" />
-        Sair
-      </button>
+      <div class="flex items-center gap-4">
+        <NuxtLink
+          to="/"
+          class="font-abhayaLibre text-sm text-dark-brown hover:text-gold transition-colors flex items-center gap-2"
+        >
+          <span class="pi pi-home" />
+          Ver site
+        </NuxtLink>
+        <button
+          class="font-abhayaLibre text-sm text-dark-brown hover:text-gold transition-colors flex items-center gap-2"
+          @click="logout"
+        >
+          <span class="pi pi-sign-out" />
+          Sair
+        </button>
+      </div>
     </header>
 
     <main class="max-w-4xl mx-auto px-6 py-10">

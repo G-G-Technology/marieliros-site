@@ -4,7 +4,12 @@
       <NuxtLink to="/admin" class="text-dark-brown hover:text-gold transition-colors">
         <span class="pi pi-arrow-left" />
       </NuxtLink>
-      <h1 class="font-cinzel font-bold text-dark-brown">Editar Textos de Terapia</h1>
+      <h1 class="font-cinzel font-bold text-dark-brown flex-1">Editar Textos de Terapia</h1>
+      <NuxtLink
+        to="/"
+        class="ml-auto font-abhayaLibre text-sm text-dark-brown hover:text-gold transition-colors flex items-center gap-1.5"
+        ><span class="pi pi-home" />Ver site</NuxtLink
+      >
     </header>
 
     <main class="max-w-2xl mx-auto px-6 py-8 space-y-6">

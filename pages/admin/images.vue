@@ -5,9 +5,14 @@
         <span class="pi pi-arrow-left" />
       </NuxtLink>
       <div>
-        <h1 class="font-cinzel font-bold text-dark-brown">Gerenciar Imagens</h1>
+        <h1 class="font-cinzel font-bold text-dark-brown flex-1">Gerenciar Imagens</h1>
         <p class="font-abhayaLibre text-beige text-xs">Clique em uma imagem para substituí-la</p>
       </div>
+      <NuxtLink
+        to="/"
+        class="ml-auto font-abhayaLibre text-sm text-dark-brown hover:text-gold transition-colors flex items-center gap-1.5"
+        ><span class="pi pi-home" />Ver site</NuxtLink
+      >
     </header>
 
     <main class="max-w-4xl mx-auto px-6 py-8">
