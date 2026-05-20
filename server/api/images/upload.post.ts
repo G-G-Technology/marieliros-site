@@ -24,6 +24,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const folder = process.env.CLOUDINARY_GALLERY_FOLDER || 'marieli-site';
+  const timestamp = Math.floor(Date.now() / 1000);
 
   const cld = getCloudinary();
 
@@ -31,11 +32,11 @@ export default defineEventHandler(async (event) => {
     cld.uploader
       .upload_stream(
         {
-          folder,
+          timestamp,
+          asset_folder: folder,
           public_id: slot,
           overwrite: true,
           invalidate: true,
-          resource_type: 'image',
         },
         (error, uploadResult) => {
           if (error || !uploadResult) return reject(error || new Error('Upload failed'));

@@ -9,11 +9,7 @@ export default defineEventHandler(async (event) => {
   const folder = process.env.CLOUDINARY_GALLERY_FOLDER || 'marieli-site';
   const cld = getCloudinary();
 
-  const result = await cld.api.resources({
-    type: 'upload',
-    prefix: folder,
-    max_results: 50,
-  });
+  const result = await cld.api.resources_by_asset_folder(folder, { max_results: 50 });
 
   const imageMap: Record<string, string> = {};
   for (const resource of result.resources as { public_id: string; secure_url: string }[]) {
