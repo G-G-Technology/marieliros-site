@@ -390,12 +390,12 @@ Add these in the repository's **Settings → Secrets and variables → Actions**
 | `DATABASE_URL` | MongoDB Atlas connection string |
 | `NUXT_SESSION_PASSWORD` | Generate: `openssl rand -base64 32` |
 | `ADMIN_EMAILS` | `psi.marieliros@gmail.com,compilation.sideprojects@gmail.com` |
-| `EMAIL_USER` | `geguitechnology@gmail.com` |
+| `EMAIL_USER` | `compilation.sideprojects@gmail.com` |
 | `EMAIL_APP_PASSWORD` | Gmail App Password from `.env` |
 | `CLOUDINARY_CLOUD_NAME` | `dmzxqlog7` |
 | `CLOUDINARY_API_KEY` | From `.env` |
 | `CLOUDINARY_API_SECRET` | From `.env` |
-| `CLOUDINARY_GALLERY_FOLDER` | `marieli-website-prod` |
+| `CLOUDINARY_GALLERY_FOLDER` | `marieli-site` |
 | `OTP_RATE_LIMIT_MINUTES` | `2` |
 
 **3. MongoDB Atlas — allow Vercel IPs**
@@ -552,7 +552,7 @@ EMAIL_APP_PASSWORD=xxxx xxxx xxxx xxxx
 CLOUDINARY_CLOUD_NAME=your-cloud-name
 CLOUDINARY_API_KEY=your-api-key
 CLOUDINARY_API_SECRET=your-api-secret
-CLOUDINARY_GALLERY_FOLDER=marieli-website-dev
+CLOUDINARY_GALLERY_FOLDER=marieli-site
 
 # Rate limiting
 OTP_RATE_LIMIT_MINUTES=2
@@ -646,7 +646,7 @@ This runs the Nitro server (same runtime as Vercel) at [http://localhost:3000](h
 | `CLOUDINARY_CLOUD_NAME` | Cloudinary SDK | `dmzxqlog7` |
 | `CLOUDINARY_API_KEY` | Cloudinary SDK | From Cloudinary dashboard |
 | `CLOUDINARY_API_SECRET` | Cloudinary SDK | From Cloudinary dashboard |
-| `CLOUDINARY_GALLERY_FOLDER` | Image upload | `marieli-website-prod` |
+| `CLOUDINARY_GALLERY_FOLDER` | Image upload | `marieli-site` |
 | `RECAPTCHA_SITE_KEY` | reCAPTCHA widget | Public key |
 | `RECAPTCHA_SECRET_KEY` | reCAPTCHA verify | Private key |
 | `OTP_RATE_LIMIT_MINUTES` | OTP rate limiter | `2` |

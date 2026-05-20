@@ -23,8 +23,7 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: `Slot inválido. Use um de: ${VALID_SLOTS.join(', ')}` });
   }
 
-  const folder = process.env.CLOUDINARY_GALLERY_FOLDER || 'marieli-website-prod';
-  const publicId = `${folder}/${slot}`;
+  const folder = process.env.CLOUDINARY_GALLERY_FOLDER || 'marieli-site';
 
   const cld = getCloudinary();
 
@@ -32,7 +31,8 @@ export default defineEventHandler(async (event) => {
     cld.uploader
       .upload_stream(
         {
-          public_id: publicId,
+          folder,
+          public_id: slot,
           overwrite: true,
           invalidate: true,
           resource_type: 'image',

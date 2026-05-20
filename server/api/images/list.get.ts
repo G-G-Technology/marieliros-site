@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 401, message: 'Não autorizado.' });
   }
 
-  const folder = process.env.CLOUDINARY_GALLERY_FOLDER || 'marieli-website-prod';
+  const folder = process.env.CLOUDINARY_GALLERY_FOLDER || 'marieli-site';
   const cld = getCloudinary();
 
   const result = await cld.api.resources({
