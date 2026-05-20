@@ -1,13 +1,19 @@
 <template>
-  <div>
-    <NuxtImg :src="picturePath" size="w-778 h-372 sm:w-214 sm:h-421" densities="x1 x2" />
-  </div>
+  <NuxtImg
+    :src="picturePath"
+    :alt="alt"
+    class="w-full h-auto"
+    format="webp"
+    loading="lazy"
+  />
 </template>
 
 <script lang="ts" setup>
-defineProps<{
-  picturePath: string;
-}>();
+withDefaults(
+  defineProps<{
+    picturePath: string;
+    alt?: string;
+  }>(),
+  { alt: '' },
+);
 </script>
-
-<style></style>

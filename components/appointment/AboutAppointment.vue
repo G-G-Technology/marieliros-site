@@ -10,17 +10,16 @@
         Podendo ser realizado em duas modalidades:
       </div>
 
-      <div class="flex flex-col md:flex-row">
-        <div class="col-start-2 col-span-6 md:col-start-2 md:col-span-5 pr-2 pb-4">
+      <div class="flex flex-col md:flex-row gap-4 w-full">
+        <div class="flex-1">
           <AppointmentType
-            :picture-path="'./img/AboutPresencial.png'"
+            :picture-path="images?.['about-presencial'] || '/img/AboutPresencial.png'"
             :description="'Presencial: o consulente se desloca até o consultório no dia e horário agendado.'"
           />
         </div>
-
-        <div class="col-start-2 col-span-6 md:col-start-7 md:col-span-5 pl-2">
+        <div class="flex-1">
           <AppointmentType
-            :picture-path="'./img/AboutOnline.png'"
+            :picture-path="images?.['about-online'] || '/img/AboutOnline.png'"
             :description="'Online: no dia e horario agendado a sessao e realizada via google meet.'"
           />
         </div>
@@ -35,8 +34,9 @@
 </template>
 
 <script lang="ts" setup>
-import AppointmentType from '../components/appointment/AppointmentType.vue';
-import ButtonComponent from '../components/common/ButtonComponent.vue';
+defineProps<{
+  images?: Record<string, string>;
+}>();
 </script>
 
 <style></style>

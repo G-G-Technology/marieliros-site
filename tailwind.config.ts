@@ -1,9 +1,6 @@
 import type { Config } from 'tailwindcss';
 
-import colors from 'tailwindcss/colors';
-// Default are on https://tailwindcss.nuxtjs.org/tailwind/config#default-configuration
 export default <Partial<Config>>{
-  // darkMode: 'class',
   content: [],
   theme: {
     extend: {
@@ -14,7 +11,6 @@ export default <Partial<Config>>{
         abhayaLibre: ['Abhaya Libre'],
       },
       colors: {
-        ...colors,
         gray: '#393837',
         beige: '#b7a292',
         cream: '#e5e0d4',

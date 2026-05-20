@@ -39,7 +39,7 @@ import { ref } from 'vue';
 interface MenuItem {
   label: string;
   sectionId: string;
-  icon: number;
+  icon: string;
 }
 
 defineProps<{
