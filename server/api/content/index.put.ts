@@ -8,6 +8,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const body = await readBody<{
+    hero?: { tagline?: string; subtitle?: string };
     bio?: { mainParagraph?: string; education?: string; practice?: string };
     therapy?: { gestalt?: string; psicoterapia?: string };
     services?: string[];
@@ -18,6 +19,7 @@ export default defineEventHandler(async (event) => {
   await connectToDatabase();
 
   const update: Record<string, unknown> = {};
+  if (body.hero) update.hero = body.hero;
   if (body.bio) update.bio = body.bio;
   if (body.therapy) update.therapy = body.therapy;
   if (body.services) update.services = body.services;
@@ -36,6 +38,7 @@ export default defineEventHandler(async (event) => {
   );
 
   return {
+    hero: content?.hero,
     bio: content?.bio,
     services: content?.services,
     contact: content?.contact,

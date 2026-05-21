@@ -18,9 +18,10 @@
     <main class="max-w-4xl mx-auto px-6 py-8">
       <div v-if="loading" class="text-center py-12 font-abhayaLibre text-beige">Carregando imagens...</div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Hero slot — full-width row -->
+      <div class="mb-6">
         <div
-          v-for="slot in carouselSlots"
+          v-for="slot in heroSlots"
           :key="slot.id"
           class="bg-white rounded-2xl overflow-hidden shadow-sm border"
           :class="slotErrors[slot.id] ? 'border-red-400' : 'border-beige'"
@@ -28,13 +29,9 @@
           <div class="relative bg-beige/20 overflow-hidden" :class="getSlotAspect(slot.id)">
             <img
               v-if="images[slot.id]"
-              :src="
-                getSlotFaceRatio(slot.id)
-                  ? cloudinaryFaceUrl(images[slot.id], getSlotFaceRatio(slot.id)!)
-                  : images[slot.id]
-              "
+              :src="images[slot.id]"
               :alt="slot.label"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover object-[30%_top]"
             />
             <div v-else class="w-full h-full flex items-center justify-center text-beige">
               <span class="pi pi-image text-3xl" />
@@ -46,16 +43,10 @@
               <span class="text-white font-abhayaLibre font-bold text-sm">Substituir</span>
             </div>
           </div>
-
           <div class="px-4 pt-4 pb-1 flex items-center justify-between">
             <div>
               <p class="font-abhayaLibre font-bold text-dark-brown text-sm">{{ slot.label }}</p>
-              <p
-                class="font-abhayaLibre text-xs"
-                :class="LANDSCAPE_ONLY_SLOTS.has(slot.id) ? 'text-amber-600' : 'text-beige'"
-              >
-                {{ SLOT_HINTS[slot.id] }}
-              </p>
+              <p class="font-abhayaLibre text-xs text-beige">{{ SLOT_HINTS[slot.id] }}</p>
             </div>
             <button
               class="bg-gold text-cream text-xs font-abhayaLibre font-bold px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity shrink-0 ml-3"
@@ -65,7 +56,6 @@
               {{ uploading === slot.id ? '...' : 'Trocar' }}
             </button>
           </div>
-
           <div v-if="slotErrors[slot.id]" class="px-4 pb-4 pt-1">
             <p class="text-red-600 font-abhayaLibre text-xs leading-snug">
               <span class="pi pi-exclamation-triangle mr-1" />
@@ -74,8 +64,11 @@
           </div>
           <div v-else class="pb-3" />
         </div>
+      </div>
 
-        <!-- Warning between carousel and appointment slots -->
+      <!-- Remaining slots -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Warning between hero and appointment slots -->
         <div
           v-if="appointmentOrientationMixed"
           class="col-span-full bg-amber-50 border border-amber-300 text-amber-800 font-abhayaLibre text-sm px-4 py-3 rounded-xl flex items-start gap-2"
@@ -167,6 +160,7 @@ const SLOT_FACE_RATIO: Record<string, string> = {
 
 // Returns the correct aspect class for a slot, using detected orientation for appointment slots
 function getSlotAspect(id: string): string {
+  if (id === 'hero') return 'aspect-video';
   if (id === 'about') return 'aspect-[3/4]';
   if (id === 'about-online' || id === 'about-presencial') {
     return presencialPortrait.value || onlinePortrait.value ? 'aspect-[3/4]' : 'aspect-[4/3]';
@@ -183,9 +177,7 @@ function getSlotFaceRatio(id: string): string | undefined {
 }
 
 const SLOT_LABELS: Record<string, string> = {
-  'carousel-1': 'Carrossel — Slide 1',
-  'carousel-2': 'Carrossel — Slide 2',
-  'carousel-3': 'Carrossel — Slide 3',
+  hero: 'Hero — Foto Principal',
   about: 'Sobre mim',
   'about-online': 'Atendimento Online',
   'about-presencial': 'Atendimento Presencial',
@@ -194,9 +186,7 @@ const SLOT_LABELS: Record<string, string> = {
 };
 
 const SLOT_HINTS: Record<string, string> = {
-  'carousel-1': 'Apenas paisagem (horizontal)',
-  'carousel-2': 'Apenas paisagem (horizontal)',
-  'carousel-3': 'Apenas paisagem (horizontal)',
+  hero: 'Retrato recomendado (vertical)',
   about: 'Retrato ou paisagem',
   'about-online': 'Retrato ou paisagem',
   'about-presencial': 'Retrato ou paisagem',
@@ -205,12 +195,11 @@ const SLOT_HINTS: Record<string, string> = {
 };
 
 // Portrait photos break these layouts — width must be greater than height.
-const LANDSCAPE_ONLY_SLOTS = new Set(['carousel-1', 'carousel-2', 'carousel-3', 'how-can-i-help', 'contact']);
+const LANDSCAPE_ONLY_SLOTS = new Set(['how-can-i-help', 'contact']);
 
-const CAROUSEL_IDS = new Set(['carousel-1', 'carousel-2', 'carousel-3']);
 const allSlots = Object.entries(SLOT_LABELS).map(([id, label]) => ({ id, label }));
-const carouselSlots = allSlots.filter((s) => CAROUSEL_IDS.has(s.id));
-const otherSlots = allSlots.filter((s) => !CAROUSEL_IDS.has(s.id));
+const heroSlots = allSlots.filter((s) => s.id === 'hero');
+const otherSlots = allSlots.filter((s) => s.id !== 'hero');
 
 const images = ref<Record<string, string>>({});
 const slotErrors = ref<Record<string, string>>({});

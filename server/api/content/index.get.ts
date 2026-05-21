@@ -14,6 +14,10 @@ export default defineEventHandler(async (_event) => {
   const images = (content.images as unknown as Record<string, string>) ?? {};
 
   return {
+    hero: {
+      tagline: content.hero?.tagline || DEFAULT_CONTENT.hero.tagline,
+      subtitle: content.hero?.subtitle || DEFAULT_CONTENT.hero.subtitle,
+    },
     bio: {
       mainParagraph: content.bio?.mainParagraph || DEFAULT_CONTENT.bio.mainParagraph,
       education: content.bio?.education || DEFAULT_CONTENT.bio.education,

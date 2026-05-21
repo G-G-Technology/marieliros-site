@@ -2,6 +2,10 @@ import mongoose, { Schema } from 'mongoose';
 
 export interface IContentData {
   _id: string;
+  hero: {
+    tagline: string;
+    subtitle: string;
+  };
   bio: {
     mainParagraph: string;
     education: string;
@@ -22,6 +26,10 @@ export interface IContentData {
 
 export const DEFAULT_CONTENT = {
   _id: 'site-content',
+  hero: {
+    tagline: 'LUGAR DE SER\nQUEM SE É',
+    subtitle: 'Atendimento presencial em Florianópolis e online para o mundo.',
+  },
   bio: {
     mainParagraph:
       'Sou Psicóloga e Gestalt-terapeuta, com meu trabalho busco auxiliar os pacientes a enfrentarem seus desafios e descobrirem novas formas de enfrentamento, ampliando as possibilidades de uma vida com maior qualidade e bem estar, compreendendo melhor o mundo dentro e fora de si.',
@@ -54,6 +62,10 @@ export const DEFAULT_CONTENT = {
 const contentSchema = new Schema<IContentData>(
   {
     _id: { type: String },
+    hero: {
+      tagline: { type: String, default: DEFAULT_CONTENT.hero.tagline },
+      subtitle: { type: String, default: DEFAULT_CONTENT.hero.subtitle },
+    },
     bio: {
       mainParagraph: { type: String, default: DEFAULT_CONTENT.bio.mainParagraph },
       education: { type: String, default: DEFAULT_CONTENT.bio.education },

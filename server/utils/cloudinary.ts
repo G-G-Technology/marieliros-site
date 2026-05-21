@@ -16,9 +16,7 @@ export function getCloudinary() {
 }
 
 export const VALID_SLOTS = [
-  'carousel-1',
-  'carousel-2',
-  'carousel-3',
+  'hero',
   'about',
   'about-online',
   'about-presencial',

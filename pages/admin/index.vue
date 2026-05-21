@@ -53,10 +53,16 @@ const { clear, user } = useUserSession();
 
 const menuItems = [
   {
+    href: '/admin/hero',
+    icon: 'pi pi-star',
+    title: 'Texto Hero',
+    description: 'Editar frase e subtítulo da página inicial',
+  },
+  {
     href: '/admin/images',
     icon: 'pi pi-images',
     title: 'Imagens',
-    description: 'Substituir fotos do carrossel e seções',
+    description: 'Substituir fotos da página inicial e seções',
   },
   {
     href: '/admin/bio',
