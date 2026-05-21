@@ -20,7 +20,9 @@
       <div class="bg-white rounded-2xl border border-beige shadow-sm p-6 flex flex-col gap-5">
         <div class="flex flex-col gap-1.5">
           <label class="font-abhayaLibre font-bold text-dark-brown text-sm">Frase Principal</label>
-          <p class="font-abhayaLibre text-beige text-xs">Use Enter para quebrar linha. Exibida em fonte grande em destaque.</p>
+          <p class="font-abhayaLibre text-beige text-xs">
+            Use Enter para quebrar linha. Exibida em fonte grande em destaque.
+          </p>
           <textarea
             v-model="form.tagline"
             rows="3"
@@ -31,7 +33,9 @@
 
         <div class="flex flex-col gap-1.5">
           <label class="font-abhayaLibre font-bold text-dark-brown text-sm">Subtítulo</label>
-          <p class="font-abhayaLibre text-beige text-xs">Use Enter para quebrar linha. Exibido abaixo da frase, com ícone de localização.</p>
+          <p class="font-abhayaLibre text-beige text-xs">
+            Use Enter para quebrar linha. Exibido abaixo da frase, com ícone de localização.
+          </p>
           <textarea
             v-model="form.subtitle"
             rows="2"
@@ -42,16 +46,22 @@
 
         <!-- Preview -->
         <div class="border border-beige rounded-xl overflow-hidden">
-          <p class="font-abhayaLibre text-xs text-beige px-4 py-2 bg-beige/10 border-b border-beige">Pré-visualização</p>
+          <p class="font-abhayaLibre text-xs text-beige px-4 py-2 bg-beige/10 border-b border-beige">
+            Pré-visualização
+          </p>
           <div class="px-6 py-6 bg-cream flex flex-col gap-4">
             <p class="font-cinzel font-bold text-dark-brown text-2xl leading-snug whitespace-pre-line">
               {{ form.tagline || 'LUGAR DE SER\nQUEM SE É' }}
             </p>
-            <p class="flex items-start gap-2 font-abhayaLibre text-dark-brown text-sm leading-relaxed whitespace-pre-line">
+            <p
+              class="flex items-start gap-2 font-abhayaLibre text-dark-brown text-sm leading-relaxed whitespace-pre-line"
+            >
               <span class="pi pi-map-marker text-gold text-xs mt-1 shrink-0" />
               {{ form.subtitle || 'Atendimento presencial em Florianópolis e online para o mundo.' }}
             </p>
-            <span class="bg-gold text-cream font-abhayaLibre font-bold text-xs px-4 py-2 rounded-xl inline-flex items-center gap-1.5 w-fit">
+            <span
+              class="bg-gold text-cream font-abhayaLibre font-bold text-xs px-4 py-2 rounded-xl inline-flex items-center gap-1.5 w-fit"
+            >
               <span class="pi pi-whatsapp" />Agendar Agora
             </span>
           </div>

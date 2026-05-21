@@ -15,13 +15,6 @@ export function getCloudinary() {
   return cloudinary;
 }
 
-export const VALID_SLOTS = [
-  'hero',
-  'about',
-  'about-online',
-  'about-presencial',
-  'how-can-i-help',
-  'contact',
-] as const;
+export const VALID_SLOTS = ['hero', 'about', 'about-online', 'about-presencial', 'how-can-i-help', 'contact'] as const;
 
 export type ImageSlot = (typeof VALID_SLOTS)[number];
