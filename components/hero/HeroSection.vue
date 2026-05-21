@@ -13,7 +13,7 @@
       <!-- Desktop: gradient from right -->
       <div class="absolute inset-0 hidden md:block bg-gradient-to-l from-cream/95 via-cream/60 to-transparent" />
       <!-- Mobile: gradient from bottom -->
-      <div class="absolute inset-0 md:hidden bg-gradient-to-t from-cream/95 via-cream/50 to-transparent" />
+      <div class="absolute inset-0 md:hidden bg-gradient-to-t from-cream via-cream/80 to-cream/20" />
 
       <!-- Logo — top left, aligned with content column -->
       <div class="absolute top-6 md:top-8 inset-x-0">
