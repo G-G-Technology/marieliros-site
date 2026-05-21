@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full h-56 sm:h-72 md:h-[420px] lg:h-[540px] overflow-hidden">
+  <div class="relative w-full aspect-video max-h-[520px] overflow-hidden">
     <NuxtImg
       :src="picturePath"
       alt="carousel slide"

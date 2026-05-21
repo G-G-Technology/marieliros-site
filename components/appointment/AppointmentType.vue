@@ -1,7 +1,7 @@
 <template>
-  <div class="relative aspect-[4/3] overflow-hidden rounded-sm">
+  <div class="relative overflow-hidden rounded-sm" :class="isPortrait ? 'aspect-[3/4]' : 'aspect-[4/3]'">
     <NuxtImg
-      :src="picturePath"
+      :src="faceAwareSrc"
       :alt="description"
       class="w-full h-full object-cover object-center"
       format="webp"
@@ -16,10 +16,15 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{
+const props = defineProps<{
   picturePath: string;
   description: string;
+  isPortrait?: boolean;
 }>();
+
+const faceAwareSrc = computed(() =>
+  props.isPortrait ? cloudinaryFaceUrl(props.picturePath, '3:4') : props.picturePath,
+);
 </script>
 
 <style></style>

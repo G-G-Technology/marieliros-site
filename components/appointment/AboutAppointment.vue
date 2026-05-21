@@ -13,14 +13,16 @@
       <div class="flex flex-col md:flex-row gap-4 w-full">
         <div class="flex-1">
           <AppointmentType
-            :picture-path="images?.['about-presencial'] || '/img/AboutPresencial.png'"
+            :picture-path="presencialSrc"
             :description="'Presencial: o consulente se desloca até o consultório no dia e horário agendado.'"
+            :is-portrait="portraitWins"
           />
         </div>
         <div class="flex-1">
           <AppointmentType
-            :picture-path="images?.['about-online'] || '/img/AboutOnline.png'"
+            :picture-path="onlineSrc"
             :description="'Online: no dia e horario agendado a sessao e realizada via google meet.'"
+            :is-portrait="portraitWins"
           />
         </div>
       </div>
@@ -34,9 +36,34 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{
+const props = defineProps<{
   images?: Record<string, string>;
 }>();
-</script>
 
-<style></style>
+const presencialSrc = computed(() => props.images?.['about-presencial'] || '/img/AboutPresencial.png');
+const onlineSrc = computed(() => props.images?.['about-online'] || '/img/AboutOnline.png');
+
+const presencialPortrait = ref(false);
+const onlinePortrait = ref(false);
+
+function detectPortrait(src: string): Promise<boolean> {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(img.naturalHeight > img.naturalWidth);
+    img.onerror = () => resolve(false);
+    img.src = src;
+  });
+}
+
+async function detectOrientations() {
+  [presencialPortrait.value, onlinePortrait.value] = await Promise.all([
+    detectPortrait(presencialSrc.value),
+    detectPortrait(onlineSrc.value),
+  ]);
+}
+
+const portraitWins = computed(() => presencialPortrait.value || onlinePortrait.value);
+
+onMounted(detectOrientations);
+watch([presencialSrc, onlineSrc], detectOrientations);
+</script>

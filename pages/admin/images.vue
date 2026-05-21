@@ -18,15 +18,92 @@
     <main class="max-w-4xl mx-auto px-6 py-8">
       <div v-if="loading" class="text-center py-12 font-abhayaLibre text-beige">Carregando imagens...</div>
 
-      <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
-          v-for="slot in slots"
+          v-for="slot in carouselSlots"
           :key="slot.id"
           class="bg-white rounded-2xl overflow-hidden shadow-sm border"
           :class="slotErrors[slot.id] ? 'border-red-400' : 'border-beige'"
         >
-          <div class="relative aspect-video bg-beige/20 overflow-hidden">
-            <img v-if="images[slot.id]" :src="images[slot.id]" :alt="slot.label" class="w-full h-full object-cover" />
+          <div class="relative bg-beige/20 overflow-hidden" :class="getSlotAspect(slot.id)">
+            <img
+              v-if="images[slot.id]"
+              :src="
+                getSlotFaceRatio(slot.id)
+                  ? cloudinaryFaceUrl(images[slot.id], getSlotFaceRatio(slot.id)!)
+                  : images[slot.id]
+              "
+              :alt="slot.label"
+              class="w-full h-full object-cover"
+            />
+            <div v-else class="w-full h-full flex items-center justify-center text-beige">
+              <span class="pi pi-image text-3xl" />
+            </div>
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer"
+              @click="openUpload(slot.id)"
+            >
+              <span class="text-white font-abhayaLibre font-bold text-sm">Substituir</span>
+            </div>
+          </div>
+
+          <div class="px-4 pt-4 pb-1 flex items-center justify-between">
+            <div>
+              <p class="font-abhayaLibre font-bold text-dark-brown text-sm">{{ slot.label }}</p>
+              <p
+                class="font-abhayaLibre text-xs"
+                :class="LANDSCAPE_ONLY_SLOTS.has(slot.id) ? 'text-amber-600' : 'text-beige'"
+              >
+                {{ SLOT_HINTS[slot.id] }}
+              </p>
+            </div>
+            <button
+              class="bg-gold text-cream text-xs font-abhayaLibre font-bold px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity shrink-0 ml-3"
+              :disabled="uploading === slot.id"
+              @click="openUpload(slot.id)"
+            >
+              {{ uploading === slot.id ? '...' : 'Trocar' }}
+            </button>
+          </div>
+
+          <div v-if="slotErrors[slot.id]" class="px-4 pb-4 pt-1">
+            <p class="text-red-600 font-abhayaLibre text-xs leading-snug">
+              <span class="pi pi-exclamation-triangle mr-1" />
+              {{ slotErrors[slot.id] }}
+            </p>
+          </div>
+          <div v-else class="pb-3" />
+        </div>
+
+        <!-- Warning between carousel and appointment slots -->
+        <div
+          v-if="appointmentOrientationMixed"
+          class="col-span-full bg-amber-50 border border-amber-300 text-amber-800 font-abhayaLibre text-sm px-4 py-3 rounded-xl flex items-start gap-2"
+        >
+          <span class="pi pi-exclamation-triangle mt-0.5 shrink-0" />
+          <span>
+            "Atendimento Presencial" e "Atendimento Online" estão em orientações diferentes (uma vertical, outra
+            horizontal). Para melhor resultado, use duas fotos no mesmo formato.
+          </span>
+        </div>
+
+        <div
+          v-for="slot in otherSlots"
+          :key="slot.id"
+          class="bg-white rounded-2xl overflow-hidden shadow-sm border"
+          :class="slotErrors[slot.id] ? 'border-red-400' : 'border-beige'"
+        >
+          <div class="relative bg-beige/20 overflow-hidden" :class="getSlotAspect(slot.id)">
+            <img
+              v-if="images[slot.id]"
+              :src="
+                getSlotFaceRatio(slot.id)
+                  ? cloudinaryFaceUrl(images[slot.id], getSlotFaceRatio(slot.id)!)
+                  : images[slot.id]
+              "
+              :alt="slot.label"
+              class="w-full h-full object-cover"
+            />
             <div v-else class="w-full h-full flex items-center justify-center text-beige">
               <span class="pi pi-image text-3xl" />
             </div>
@@ -82,6 +159,29 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'admin', layout: false });
 
+// Face-detection crop ratio applied in the preview — mirrors cloudinaryFaceUrl calls in site components
+const SLOT_FACE_RATIO: Record<string, string> = {
+  'about-online': '4:3',
+  'about-presencial': '4:3',
+};
+
+// Returns the correct aspect class for a slot, using detected orientation for appointment slots
+function getSlotAspect(id: string): string {
+  if (id === 'about') return 'aspect-[3/4]';
+  if (id === 'about-online' || id === 'about-presencial') {
+    return presencialPortrait.value || onlinePortrait.value ? 'aspect-[3/4]' : 'aspect-[4/3]';
+  }
+  return 'aspect-video';
+}
+
+// Returns the correct face-crop ratio for a slot — only applied for portrait images
+function getSlotFaceRatio(id: string): string | undefined {
+  if (id === 'about-online' || id === 'about-presencial') {
+    return presencialPortrait.value || onlinePortrait.value ? '3:4' : undefined;
+  }
+  return SLOT_FACE_RATIO[id];
+}
+
 const SLOT_LABELS: Record<string, string> = {
   'carousel-1': 'Carrossel — Slide 1',
   'carousel-2': 'Carrossel — Slide 2',
@@ -107,7 +207,10 @@ const SLOT_HINTS: Record<string, string> = {
 // Portrait photos break these layouts — width must be greater than height.
 const LANDSCAPE_ONLY_SLOTS = new Set(['carousel-1', 'carousel-2', 'carousel-3', 'how-can-i-help', 'contact']);
 
-const slots = Object.entries(SLOT_LABELS).map(([id, label]) => ({ id, label }));
+const CAROUSEL_IDS = new Set(['carousel-1', 'carousel-2', 'carousel-3']);
+const allSlots = Object.entries(SLOT_LABELS).map(([id, label]) => ({ id, label }));
+const carouselSlots = allSlots.filter((s) => CAROUSEL_IDS.has(s.id));
+const otherSlots = allSlots.filter((s) => !CAROUSEL_IDS.has(s.id));
 
 const images = ref<Record<string, string>>({});
 const slotErrors = ref<Record<string, string>>({});
@@ -120,6 +223,34 @@ const successMsg = ref('');
 const { data } = await useFetch('/api/images/list');
 if (data.value?.images) images.value = data.value.images;
 loading.value = false;
+
+function detectPortrait(src: string): Promise<boolean> {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(img.naturalHeight > img.naturalWidth);
+    img.onerror = () => resolve(false);
+    img.src = src;
+  });
+}
+
+const presencialPortrait = ref(false);
+const onlinePortrait = ref(false);
+const appointmentOrientationMixed = computed(
+  () =>
+    !!images.value['about-presencial'] &&
+    !!images.value['about-online'] &&
+    presencialPortrait.value !== onlinePortrait.value,
+);
+
+async function checkAppointmentOrientations() {
+  const p = images.value['about-presencial'];
+  const o = images.value['about-online'];
+  if (p) presencialPortrait.value = await detectPortrait(p);
+  if (o) onlinePortrait.value = await detectPortrait(o);
+}
+
+onMounted(checkAppointmentOrientations);
+watch(() => [images.value['about-presencial'], images.value['about-online']], checkAppointmentOrientations);
 
 function openUpload(slot: string) {
   activeSlot.value = slot;
