@@ -1,7 +1,7 @@
 <template>
   <section class="grid grid-cols-8 gap-1 md:grid-cols-12 md:gap-4 pt-16 md:pt-24">
     <div class="col-start-2 col-span-6 md:col-start-2 md:col-span-10 flex flex-col items-start">
-      <h1 class="text-dark-brown font-cinzel text-xl md:text-3xl font-bold pb-2">Como Funcinam Os Atendimentos?</h1>
+      <h1 class="text-dark-brown font-cinzel text-xl md:text-3xl font-bold pb-2">Como Funcionam Os Atendimentos?</h1>
       <div class="text-dark-brown font-abhayaLibre text-lg md:text-xl text-justify pt-3">
         Os encontros acontecem após agendamento prévio e costumam durar aproximadamente 50 minutos, tendo periodicidade
         semanal ou quinzenal, dependendo da necessidade.
@@ -10,18 +10,19 @@
         Podendo ser realizado em duas modalidades:
       </div>
 
-      <div class="flex flex-col md:flex-row">
-        <div class="col-start-2 col-span-6 md:col-start-2 md:col-span-5 pr-2 pb-4">
+      <div class="flex flex-col md:flex-row gap-4 w-full">
+        <div class="flex-1">
           <AppointmentType
-            :picture-path="'./img/AboutPresencial.png'"
+            :picture-path="presencialSrc"
             :description="'Presencial: o consulente se desloca até o consultório no dia e horário agendado.'"
+            :is-portrait="portraitWins"
           />
         </div>
-
-        <div class="col-start-2 col-span-6 md:col-start-7 md:col-span-5 pl-2">
+        <div class="flex-1">
           <AppointmentType
-            :picture-path="'./img/AboutOnline.png'"
-            :description="'Online: no dia e horario agendado a sessao e realizada via google meet.'"
+            :picture-path="onlineSrc"
+            :description="'Online: no dia e horário agendado a sessão é realizada via Google Meet.'"
+            :is-portrait="portraitWins"
           />
         </div>
       </div>
@@ -35,8 +36,34 @@
 </template>
 
 <script lang="ts" setup>
-import AppointmentType from '../components/appointment/AppointmentType.vue';
-import ButtonComponent from '../components/common/ButtonComponent.vue';
-</script>
+const props = defineProps<{
+  images?: Record<string, string>;
+}>();
 
-<style></style>
+const presencialSrc = computed(() => props.images?.['about-presencial'] || '/img/AboutPresencial.png');
+const onlineSrc = computed(() => props.images?.['about-online'] || '/img/AboutOnline.png');
+
+const presencialPortrait = ref(false);
+const onlinePortrait = ref(false);
+
+function detectPortrait(src: string): Promise<boolean> {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(img.naturalHeight > img.naturalWidth);
+    img.onerror = () => resolve(false);
+    img.src = src;
+  });
+}
+
+async function detectOrientations() {
+  [presencialPortrait.value, onlinePortrait.value] = await Promise.all([
+    detectPortrait(presencialSrc.value),
+    detectPortrait(onlineSrc.value),
+  ]);
+}
+
+const portraitWins = computed(() => presencialPortrait.value || onlinePortrait.value);
+
+onMounted(detectOrientations);
+watch([presencialSrc, onlineSrc], detectOrientations);
+</script>

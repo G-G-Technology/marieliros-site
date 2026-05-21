@@ -11,37 +11,47 @@
 
       <div class="flex flex-row pt-3 md:pt-8 pb-12 md:pb-20">
         <NuxtLink
-          to="mailto:psi.marieliros@gmail.com?subject=Agendamento%20de%20consulta&body=Ol%C3%A1%20Marieli%2C%20%0AVenho%20atrav%C3%A9s%20to%20seu%20website%20e%20gostaria%20de%20agendar%20uma%20consulta.%0A"
+          :to="`mailto:${displayContact.email}?subject=Agendamento%20de%20consulta&body=Ol%C3%A1%20Marieli%2C%20%0AVenho%20atrav%C3%A9s%20to%20seu%20website%20e%20gostaria%20de%20agendar%20uma%20consulta.%0A`"
           target="_blank"
           class="bg-gold rounded-full h-8 w-8 text-center mx-2"
         >
-          <span :class="'pi pi-envelope h-8 w-8'" class="text-cream px-2 py-2"></span>
+          <span class="pi pi-envelope h-8 w-8 text-cream px-2 py-2" />
         </NuxtLink>
 
         <NuxtLink
-          to="https://wa.me/554891507605?text=Ol%C3%A1%20Marieli%2C%20%0AVenho%20atrav%C3%A9s%20to%20seu%20website%20e%20gostaria%20de%20agendar%20uma%20consulta.%0A"
+          :to="`https://wa.me/${displayContact.whatsapp}?text=Ol%C3%A1%20Marieli%2C%20%0AVenho%20atrav%C3%A9s%20to%20seu%20website%20e%20gostaria%20de%20agendar%20uma%20consulta.%0A`"
           target="_blank"
           class="bg-gold rounded-full h-8 w-8 text-center mx-2"
         >
-          <span :class="'pi pi-whatsapp h-8 w-8'" class="text-cream px-2 py-2"></span>
+          <span class="pi pi-whatsapp h-8 w-8 text-cream px-2 py-2" />
         </NuxtLink>
 
         <NuxtLink
-          to="https://www.instagram.com/psi.marieliros/"
+          :to="`https://www.instagram.com/${displayContact.instagram}/`"
           target="_blank"
           class="bg-gold rounded-full h-8 w-8 text-center mx-2"
         >
-          <span :class="'pi pi-instagram height-24px'" class="text-cream px-2 py-2"></span>
+          <span class="pi pi-instagram text-cream px-2 py-2" />
         </NuxtLink>
       </div>
 
       <NuxtLink to="#BannerCarousel" class="max-sm:hidden bg-cream rounded-full h-8 w-8 text-center ml-auto mr-0 mt-12">
-        <span :class="'pi pi-home text-gold h-8 w-8'" class="px-2 py-2"></span>
+        <span class="pi pi-home text-gold h-8 w-8 px-2 py-2" />
       </NuxtLink>
     </div>
   </section>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const DEFAULTS = {
+  whatsapp: '554891507605',
+  email: 'psi.marieliros@gmail.com',
+  instagram: 'psi.marieliros',
+};
 
-<style></style>
+const props = defineProps<{
+  contact?: { whatsapp: string; email: string; instagram: string } | null;
+}>();
+
+const displayContact = computed(() => props.contact ?? DEFAULTS);
+</script>

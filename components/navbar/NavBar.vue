@@ -1,8 +1,16 @@
 <template>
   <nav class="grid grid-cols-8 gap-1 md:grid-cols-12 md:gap-4 pt-4 md:pt-8">
-    <div class="py-4 pr-4 col-start-2 col-span-4 md:col-start-2 md:col-span-3">
-      <div class="text-center text-dark-brown font-alexBrush text-3xl md:text-4xl">Marieli Ros</div>
-      <div class="text-center text-gold font-abhayaLibre text-sm md:text-lg">Psicóloga Clínica</div>
+    <div class="py-4 pr-4 col-start-2 col-span-4 md:col-start-2 md:col-span-4 flex items-center gap-0">
+      <img
+        src="/img/logo.png"
+        alt=""
+        aria-hidden="true"
+        class="h-12 md:h-20 w-auto flex-shrink-0 mix-blend-multiply select-none pointer-events-none"
+      />
+      <div class="-ml-2">
+        <div class="text-dark-brown font-alexBrush text-3xl md:text-4xl leading-tight whitespace-nowrap">Marieli Ros</div>
+        <div class="text-gold font-abhayaLibre text-sm md:text-lg whitespace-nowrap">Psicóloga Clínica</div>
+      </div>
     </div>
     <div class="max-sm:hidden col-start-7 col-end-10 flex flex-row items-center justify-self-center py-3 pl-3">
       <div v-for="(item, index) in menuItems" :key="index" class="p-3 hover:bg-beige">
@@ -19,7 +27,6 @@
 </template>
 
 <script setup lang="ts">
-import SideBar from '../components/navbar/SideBar.vue';
 const menuItems = [
   { label: 'Sobre', sectionId: '#AboutMe', icon: 'pi pi-heart' },
   { label: 'Psicoterapia', sectionId: '#GestaltTherapy', icon: 'pi pi-star' },
